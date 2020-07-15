@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bandas</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+       <%= nav_bar brand: "Cal-miseta", brand_link: root_path, brand_link: bandas_new_path %>
+    <div class="container">
+      
+    <%= yield %>
+        
+      </div>
+  </body>
+</html>

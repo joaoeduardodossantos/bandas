@@ -1,0 +1,59 @@
+<html>
+    
+    <body>
+        <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descricao</th>
+                <th>Quantidade</th>
+                <th>Preco</th>
+            </tr>
+            </thead>
+        
+            <tbody>
+                <% @todas_bandas.each do |bandas| %>
+                <tr>
+                    <th><%= bandas.nome %> </th>
+                    <th><%= bandas.descricao %></th>
+                    <th><%= bandas.quantidade %></th>
+                    <th><%= bandas.preco %></th>
+                    <th>
+                        <!--a href="/bandas/<%= bandas.id %>/remove">Remove</a> -->
+                        <!--<%= link_to  "Remover", "/bandas/#{bandas.id}/remove" %>  -->
+                        <!-- <%= link_to  "Remover", bandas, method: :delete %> -->
+                        <%= button_to  "Remover", bandas, method: :delete, class: "btn btn-danger",
+                            data: { confirm: "Tem certeza que deseja remover #{bandas.nome}"}
+                         %>
+                    
+                    </tr>
+                <% end %>
+            </tbody>
+            </table>
+            
+            <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descricao</th>
+                <th>Quantidade</th>
+                <th>Preco</th>
+            </tr>
+            </thead>
+        
+            <tbody>
+                <% @todas_bandas_promocao.each do |bandas| %>
+                <tr>
+                    <th><%= bandas.nome %> </th>
+                    <th><%= bandas.descricao %></th>
+                    <th><%= bandas.quantidade %></th>
+                    <th><%= bandas.preco %></th>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </div>
+    </body>
+        
+</html>
