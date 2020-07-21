@@ -1,0 +1,12 @@
+                <tr>
+                    <th><%= banda.nome %> </th>
+                    <th><%= banda.descricao %></th>
+                    <th><%= banda.quantidade %></th>
+                    <th><%= banda.preco %></th>
+                    <th> 
+                       <%= button_to  "Remover", banda, method: :delete, class: "btn btn-danger",
+                            data: { confirm: "Tem certeza que deseja remover #{banda.nome}"}
+                         %>
+                    
+                    </tr>
+                

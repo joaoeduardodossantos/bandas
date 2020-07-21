@@ -10,7 +10,17 @@
   </head>
 
   <body>
-       <%= nav_bar brand: "Cal-miseta", brand_link: root_path, brand_link: bandas_new_path %>
+       <%= nav_bar brand: "Cal-miseta", brand_link: root_path do %>
+          <%= form_tag busca_banda_path,
+                           method: :get, 
+                           class: "navbar-form navbar-right" do %>
+            <div class="form-group">
+                <%= text_field_tag :nome, @nome, class: "form-control" %>
+                <%= button_to  "Buscar", nil, class: "btn btn-default" %>
+            </div>
+          <% end %>
+       <% end %>
+
     <div class="container">
       
     <%= yield %>
