@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :estilos
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     # resources :produtos, only: [:new, :create, :destroy]
     get "bandas/busca", to: "bandas#busca", as: :busca_banda

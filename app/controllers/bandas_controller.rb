@@ -6,11 +6,12 @@ class BandasController < ApplicationController
 
     def new
         @banda = Banda.new
+        @estilos = Estilo.all
     end
     
     def create
         valores = params.require(:banda)
-            .permit(:nome, :descricao, :quantidade, :preco)
+            .permit(:nome, :descricao, :quantidade, :preco, :estilo_id, :id)
         @banda = Banda.new valores
         if @banda.save
             flash[:notice] = "Produto salvo com sucesso!"

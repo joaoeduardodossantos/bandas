@@ -23,6 +23,15 @@
         <%= f.label :preco %><br />
         <%= f.number_field :preco, step: 0.1, class: "form-control" %><br /><br />
     </div>
+ 
+    <div class="form-group">
+        <%= f.label :estilo %><br />
+        <%= f.collection_select :estilo_id, @estilos, :id, :nome,
+                    {}, class: "form-control"
+         %><br />
+    </div>
+
+
     <%= f.submit "Criar", class: "btn btn-primary" %>
 
 <% end %>
