@@ -8,5 +8,9 @@
                             data: { confirm: "Tem certeza que deseja remover #{banda.nome}"}
                          %>
                     
-                    </tr>
+                    </th>
+                    <th>
+                        <%= link_to  "Alterar",  edit_banda_path(banda), 
+                        class: "btn btn-default" %>
+                    </th>
                 
